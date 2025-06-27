@@ -1,0 +1,84 @@
+# Created at 2025-06-27T12:40:10.400
+org.testng.TestNGException: 
+Cannot instantiate class tests.TestScenario1
+	at org.testng.internal.objects.InstanceCreator.newInstance(InstanceCreator.java:41)
+	at org.testng.ITestObjectFactory.newInstance(ITestObjectFactory.java:18)
+	at org.testng.internal.objects.SimpleObjectDispenser.instantiateUsingDefaultConstructor(SimpleObjectDispenser.java:178)
+	at org.testng.internal.objects.SimpleObjectDispenser.createInstance(SimpleObjectDispenser.java:87)
+	at org.testng.internal.objects.SimpleObjectDispenser.dispense(SimpleObjectDispenser.java:40)
+	at org.testng.internal.objects.GuiceBasedObjectDispenser.dispense(GuiceBasedObjectDispenser.java:28)
+	at org.testng.internal.ClassImpl.getDefaultInstance(ClassImpl.java:106)
+	at org.testng.internal.ClassImpl.getInstances(ClassImpl.java:136)
+	at org.testng.TestClass.getInstances(TestClass.java:129)
+	at org.testng.TestClass.initTestClassesAndInstances(TestClass.java:109)
+	at org.testng.TestClass.init(TestClass.java:101)
+	at org.testng.TestClass.<init>(TestClass.java:66)
+	at org.testng.TestRunner.initMethods(TestRunner.java:483)
+	at org.testng.TestRunner.init(TestRunner.java:356)
+	at org.testng.TestRunner.init(TestRunner.java:309)
+	at org.testng.TestRunner.<init>(TestRunner.java:184)
+	at org.testng.SuiteRunner$DefaultTestRunnerFactory.newTestRunner(SuiteRunner.java:652)
+	at org.testng.SuiteRunner.init(SuiteRunner.java:224)
+	at org.testng.SuiteRunner.<init>(SuiteRunner.java:116)
+	at org.testng.TestNG.createSuiteRunner(TestNG.java:1375)
+	at org.testng.TestNG.createSuiteRunners(TestNG.java:1349)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1191)
+	at org.testng.TestNG.runSuites(TestNG.java:1114)
+	at org.testng.TestNG.run(TestNG.java:1082)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:155)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeSingleClass(TestNGDirectoryTestSuite.java:102)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:91)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:137)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+Caused by: java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:74)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
+	at org.testng.internal.objects.InstanceCreator.newInstance(InstanceCreator.java:38)
+	... 31 more
+Caused by: java.lang.Error: Unresolved compilation problems: 
+	The declared package "test.java.tests" does not match the expected package "tests"
+	The import main cannot be resolved
+	LoginPage cannot be resolved to a type
+	InventoryPage cannot be resolved to a type
+	CartPage cannot be resolved to a type
+	CheckoutPage cannot be resolved to a type
+	CheckoutCompletePage cannot be resolved to a type
+	The method of(String, boolean, String, boolean, String, int) is undefined for the type Map
+	LoginPage cannot be resolved to a type
+	LoginPage cannot be resolved to a type
+	InventoryPage cannot be resolved to a type
+	InventoryPage cannot be resolved to a type
+	CartPage cannot be resolved to a type
+	CartPage cannot be resolved to a type
+	CheckoutPage cannot be resolved to a type
+	CheckoutPage cannot be resolved to a type
+	CheckoutCompletePage cannot be resolved to a type
+	CheckoutCompletePage cannot be resolved to a type
+	LoginPage cannot be resolved to a type
+	InventoryPage cannot be resolved to a type
+	InventoryPage cannot be resolved to a type
+	InventoryPage cannot be resolved to a type
+	InventoryPage cannot be resolved to a type
+	CartPage cannot be resolved to a type
+	CartPage cannot be resolved to a type
+	CartPage cannot be resolved to a type
+	CartPage cannot be resolved to a type
+	CheckoutPage cannot be resolved to a type
+	CheckoutPage cannot be resolved to a type
+	CheckoutPage cannot be resolved to a type
+	CheckoutPage cannot be resolved to a type
+	CheckoutPage cannot be resolved to a type
+	CheckoutPage cannot be resolved to a type
+	CheckoutPage cannot be resolved to a type
+	CheckoutPage cannot be resolved to a type
+	CheckoutCompletePage cannot be resolved to a type
+
+	at tests.TestScenario1.<init>(TestScenario1.java:1)
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	... 34 more
+
+

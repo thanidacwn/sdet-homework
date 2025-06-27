@@ -1,6 +1,6 @@
-package test.java.tests;
+package tests;
 
-import main.java.pages.*;
+import pages.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions; 
@@ -16,6 +16,7 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 import java.util.Map;
+import java.util.HashMap;
 
 public class TestScenario1 {
 
@@ -34,16 +35,18 @@ public class TestScenario1 {
 
     @BeforeMethod
     public void setup() {
+        Map<String, Object> prefs = new HashMap<>();
+        prefs.put("credentials_enable_service", false);
+        prefs.put("profile.password_manager_enabled", false);
+        prefs.put("profile.default_content_setting_values.notifications", 2);
+        
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--incognito"); // Use incognito mode
-        options.addArguments("--disable-save-password-bubble"); // close save password bubble
-        options.addArguments("--disable-notifications"); // close notifications to avoid popups
-        options.addArguments("--disable-popup-blocking"); // close popup blocking
-        options.setExperimentalOption("prefs", Map.of(
-            "credentials_enable_service", false,
-            "profile.password_manager_enabled", false,
-            "profile.default_content_setting_values.notifications", 2
-        ));
+        options.addArguments("--incognito");
+        options.addArguments("--disable-save-password-bubble");
+        options.addArguments("--disable-notifications");
+        options.addArguments("--disable-popup-blocking");
+        options.setExperimentalOption("prefs", prefs);
+        
         driver = new ChromeDriver(options);
         driver.get("https://www.saucedemo.com/");
         loginPage = new LoginPage(driver);

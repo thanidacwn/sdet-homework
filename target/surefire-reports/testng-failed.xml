@@ -3,14 +3,14 @@
 <suite name="Failed suite [Surefire suite]" verbose="0">
   <test thread-count="5" name="Surefire test(failed)" verbose="0">
     <classes>
-      <class name="test.java.tests.TestScenario1">
+      <class name="tests.TestScenario1">
         <methods>
           <include name="testScenario1_AddTwoProductsAndCheckout"/>
+          <include name="tearDown"/>
           <include name="setup"/>
           <include name="setupClass"/>
-          <include name="tearDown"/>
         </methods>
-      </class> <!-- test.java.tests.TestScenario1 -->
+      </class> <!-- tests.TestScenario1 -->
     </classes>
   </test> <!-- Surefire test(failed) -->
 </suite> <!-- Failed suite [Surefire suite] -->

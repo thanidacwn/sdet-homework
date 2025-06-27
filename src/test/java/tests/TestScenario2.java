@@ -1,6 +1,6 @@
-package test.java.tests;
+package tests;
 
-import main.java.pages.LoginPage;
+import pages.LoginPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -10,6 +10,7 @@ import static org.testng.Assert.*;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
+import java.util.HashMap;
 import java.util.Map;
 import java.time.Duration;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -28,13 +29,17 @@ public class TestScenario2 {
 
     @BeforeMethod
     public void setup() {
+        Map<String, Object> prefs = new HashMap<>();
+        prefs.put("credentials_enable_service", false);
+        prefs.put("profile.password_manager_enabled", false);
+        prefs.put("profile.default_content_setting_values.notifications", 2);
+
         ChromeOptions options = new ChromeOptions();
-        options.setExperimentalOption("prefs", Map.of(
-            "credentials_enable_service", false,
-            "profile.password_manager_enabled", false
-        ));
+        options.addArguments("--incognito");
         options.addArguments("--disable-save-password-bubble");
         options.addArguments("--disable-notifications");
+        options.addArguments("--disable-popup-blocking");
+        options.setExperimentalOption("prefs", prefs);
 
         driver = new ChromeDriver(options);
         driver.get("https://www.saucedemo.com/");
